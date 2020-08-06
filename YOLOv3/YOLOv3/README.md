@@ -4,7 +4,7 @@
 
 ## Introduction
 
-A Keras implementation of YOLOv3 (Tensorflow backend) inspired by [allanzelener/YAD2K](https://github.com/allanzelener/YAD2K).
+A Keras implementation of YOLOv3 (Tensorflow backend) inspired by [qqwweee/keras-yolo3](https://github.com/qqwweee/keras-yolo3).
 
 
 ---
@@ -82,9 +82,10 @@ If you want to use original pretrained weights for YOLOv3:
 ## Some issues to know
 
 1. The test environment is
-    - Python 3.5.2
-    - Keras 2.1.5
-    - tensorflow 1.6.0
+    - Python 3.6.8
+    - Keras 2.2.4
+    - tensorflow 1.13.1
+    - tensorflow-gpu 1.13.1
 
 2. Default anchors are used. If you use your own anchors, probably some changes are needed.
 
