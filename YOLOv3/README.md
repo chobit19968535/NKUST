@@ -4,7 +4,7 @@
 
 ## Introduction
 
-A Keras implementation of YOLOv3 (Tensorflow backend) inspired by [qqwweee/keras-yolo3](https://github.com/qqwweee/keras-yolo3).
+A Keras implementation of YOLOv3 (Tensorflow backend) inspired by [allanzelener/YAD2K](https://github.com/allanzelener/YAD2K).
 
 
 ---
@@ -82,10 +82,9 @@ If you want to use original pretrained weights for YOLOv3:
 ## Some issues to know
 
 1. The test environment is
-    - Python 3.6.8
-    - Keras 2.2.4
-    - tensorflow 1.13.1
-    - tensorflow-gpu 1.13.1
+    - Python 3.5.2
+    - Keras 2.1.5
+    - tensorflow 1.6.0
 
 2. Default anchors are used. If you use your own anchors, probably some changes are needed.
 
@@ -98,15 +97,3 @@ If you want to use original pretrained weights for YOLOv3:
 6. The training strategy is for reference only. Adjust it according to your dataset and your goal. And add further strategy if needed.
 
 7. For speeding up the training process with frozen layers train_bottleneck.py can be used. It will compute the bottleneck features of the frozen model first and then only trains the last layers. This makes training on CPU possible in a reasonable time. See [this](https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html) for more information on bottleneck features.
-
-## Changes
-
-1. Now can train over than 80 classes.
-2. Now yolo.py can evalute mAP and generate each class-AP.
-
-## Future Project
-
-1. Rotation augmentation
-2. Focal loss
-3. mosaic augmentation
-4. GIOU, DIOU and CIOU loss
