@@ -103,3 +103,10 @@ If you want to use original pretrained weights for YOLOv3:
 
 1. Now can train over than 80 classes.
 2. Now yolo.py can evalute mAP and generate each class-AP.
+
+## Future Project
+
+1. Rotation augmentation
+2. Focal loss
+3. mosaic augmentation
+4. GIOU, DIOU and CIOU loss
