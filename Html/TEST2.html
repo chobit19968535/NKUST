@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+<head>
+   
+    <meta charset="UTF-8">
+    <link rel=stylesheet  href="CSS/Table.css" >
+    			<link rel=stylesheet  href="CSS/text_RWD.css" > 
+			<link rel=stylesheet  href="CSS/img_RWD.css" >
+    <title>Untitled Document</title>
+</head>
+<body>
+
+	<table border=1 width=100%>
+		<tr>
+		<th colspan=5 id='Event' 		onclick="Event()">活動</th>
+		<th colspan=5 id='maintenance' onclick="maintenance()">維修</th>
+		</tr>
+		<tr>
+			<td clospan=1 id="imgICON1" align=center><img src=https://i.imgur.com/DAtyjFm.jpg></td>
+			<td colspan=9 id=text1>50オーブ=￥500</td>
+		</tr>
+		
+		<tr>
+			<td clospan=1 id=imgICON2 align=center><img src=https://i.imgur.com/DAtyjFm.jpg></td>
+			<td colspan=9 id=text2>100オーブ=￥1,000</td>
+		</tr>
+		<tr>
+			<td clospan=1 id=imgICON3 align=center><img src=https://i.imgur.com/DAtyjFm.jpg></td>
+			<td colspan=9 id=text3>200オーブ=￥2,000</td>
+		</tr>
+		<tr>
+			<td clospan=1 id=imgICON4 align=center><img src=https://i.imgur.com/DAtyjFm.jpg></td>
+			<td colspan=9 id=text4>200 + 15 オーブ=￥3,000</td>
+		</tr>
+		<tr>
+			<td clospan=1 id=imgICON5 align=center><img src=https://i.imgur.com/DAtyjFm.jpg></td>
+			<td colspan=9 id=text5>1000 + 70 オーブ=￥10,000</td>
+		</tr>
+				<tr style="visibility: hidden;">
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+			<td>4</td>
+			<td>5</td>
+			<td>6</td>
+			<td>7</td>
+			<td>8</td>
+			<td>9</td>
+			<td>10</td>
+				</tr>
+	</table>
+
+
+
+		<!-- Event事件-->
+		<script>
+		function Event(){
+		//活動兩字特效
+		fonteffeltEvent();
+		//Event圖片置入
+		document.getElementById("imgICON1").innerHTML="<img src=https://i.imgur.com/1VNSEKy.jpg>"	
+		document.getElementById("imgICON2").innerHTML="<img src=https://i.imgur.com/1VNSEKy.jpg>"	
+		document.getElementById("imgICON3").innerHTML="<img src=https://i.imgur.com/1VNSEKy.jpg>"
+		document.getElementById("imgICON4").innerHTML="<img src=https://i.imgur.com/1VNSEKy.jpg>"
+		document.getElementById("imgICON5").innerHTML="<img src=https://i.imgur.com/1VNSEKy.jpg>"
+		//Event文字置入
+		document.getElementById("text1").innerHTML=
+			//第一列活動公告
+		"2018-04-18 <a href = 'http://www.fantasy-earth.com/news/detail.php?id=39603'  target= '_blank'>『エルフ聖誕祭』の実施</a>"
+			//第二列活動公告
+		document.getElementById("text2").innerHTML=
+		"2018-04-11 <a href = 'http://www.fantasy-earth.com/news/detail.php?id=39414'  target= '_blank'>『スクールガールストライカーズ』コラボレーション第二弾！</a>"
+			//第三列活動公告
+		document.getElementById("text3").innerHTML=
+		"2018-04-04 <a href = 'http://www.fantasy-earth.com/news/detail.php?id=39203'  target= '_blank'>『スクールガールストライカーズ』コラボレーション！</a>"
+			//第四列活動公告
+		document.getElementById("text4").innerHTML=
+		"2018-03-28 <a href = 'http://www.fantasy-earth.com/news/detail.php?id=38936'  target= '_blank'>『春の桜くじイベント』の実施</a>"
+			//第五列活動公告
+		document.getElementById("text5").innerHTML=
+		"2018-03-14  <a href = 'http://www.fantasy-earth.com/news/detail.php?id=38456'  target= '_blank'>『プリンセスデイズ』の実施</a>"
+		}
+		</script>
+		<!-- 維修事件-->
+		<script>
+		function maintenance(){
+		//維修兩字特效
+		fonteffect2();
+		//維修圖片置入
+		document.getElementById("imgICON1").innerHTML="<img src=https://i.imgur.com/yFFVZvf.jpg>"
+		document.getElementById("imgICON2").innerHTML="<img src=https://i.imgur.com/yFFVZvf.jpg>"
+		document.getElementById("imgICON3").innerHTML="<img src=https://i.imgur.com/yFFVZvf.jpg>"
+		document.getElementById("imgICON4").innerHTML="<img src=https://i.imgur.com/yFFVZvf.jpg>"
+		document.getElementById("imgICON5").innerHTML="<img src=https://i.imgur.com/yFFVZvf.jpg>"
+		//第一列維修公告
+			document.getElementById("text1").innerHTML=
+			"2018-04-21 <a href = 'http://www.fantasy-earth.com/news/detail.php?id=39759'  target= '_blank'>「ソフトバンクまとめて支払い」メンテナンス作業のお知らせ(4/23)</a>"
+		//第二列維修公告
+			document.getElementById("text2").innerHTML=
+			"2018-04-21 <a href = 'http://www.fantasy-earth.com/news/detail.php?id=39753'  target= '_blank'>「WebMoney」メンテナンス作業のお知らせ(4/23)</a>"
+		//第三列維修公告
+			document.getElementById("text3").innerHTML=
+			"2018-04-14 <a href = 'http://www.fantasy-earth.com/news/detail.php?id=39542'  target= '_blank'>「ソフトバンクまとめて支払い」メンテナンス作業のお知らせ(4/16)</a>"
+		//第四列維修公告
+			document.getElementById("text4").innerHTML=
+			"2018-04-11 <a href = 'http://www.fantasy-earth.com/news/detail.php?id=39425'  target= '_blank'>【終了】定期メンテナンス作業のお知らせ(4/11):続報</a>"
+		//第五列維修公告
+			document.getElementById("text5").innerHTML=
+			"2018-03-20 <a href = 'http://www.fantasy-earth.com/news/detail.php?id=38539'  target= '_blank'>【終了】定期メンテナンス作業のお知らせ(3/20):続報</a>>"
+    }
+		</script>
+  	  	<!--函式-->
+  	  	<!--活動文字特效-->
+    	<script>
+		function fonteffeltEvent(){
+		var str ="維修";
+		var result = str.fontcolor("black");
+		document.getElementById('maintenance').innerHTML = result;
+		var str ="活動";
+		var result = str.fontcolor("blue");
+		document.getElementById('Event').innerHTML = result;
+		}
+		</script>
+		<!-- 維修文字特效-->
+		<script>
+		function fonteffect2(){
+		var str ="活動";
+		var result = str.fontcolor("black");
+		document.getElementById('Event').innerHTML = result;
+		var str ="維修";
+		document.getElementById("maintenance").style.fontFamily = "Impact,Charcoal,sans-serif";
+		var result = str.fontcolor("blue");
+		document.getElementById('maintenance').innerHTML = result;
+		}
+		</script>
+
+
+
+</body>
+</html>

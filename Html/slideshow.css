@@ -1,0 +1,13 @@
+@charset"UTF-8";
+.ss{
+    overflow:hidden;
+    position:relative;
+    min-width:600px;
+    height:400px;
+}
+.ss img{
+    display:none;
+    position:absolute;
+    left:50%;
+    margin-left:-800px;
+}

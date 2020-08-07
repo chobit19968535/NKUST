@@ -1,0 +1,9 @@
+.large{
+font-size:25pt;
+color:#4d8bc9;
+}
+.selected{
+	font-weight:bold;
+	background-color:#355cb2;
+	color:#FFFFFF;
+}

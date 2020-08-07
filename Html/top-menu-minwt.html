@@ -1,0 +1,333 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>梅問題‧教學網-範例展示【浮動式固定上選單】</title>
+
+			<link rel=stylesheet type="text/css" href="CSS/County_color.css" > 
+			<link rel=stylesheet type="text/css" href="CSS/Background.css" > 
+			<link rel=stylesheet type="text/css" href="CSS/Top-bar.css" > 
+			<link rel=stylesheet type="text/css" href="CSS/font_class.css" > 
+<script src="jquery-1.9.1.min.js"></script>
+<script>
+$(function(){
+	$(window).load(function(){
+		$(window).bind('scroll resize', function(){
+			var $this = $(this);
+			var $this_Top=$this.scrollTop();
+			
+			//當高度小於100時，關閉區塊	
+			if($this_Top < 100){
+				$('#top-bar').stop().animate({top:"-65px"});
+				}
+			if($this_Top > 100){
+				$('#top-bar').stop().animate({top:"0px"});
+						
+			}
+		}).scroll();
+	});
+});
+</script>
+</head>
+<body>
+
+<div id="top-bar">
+	<div id="menu">
+		<b>梅問題</b>
+		<a href="http://www.minwt.com">教學網</a>
+		<a href="http://iapp.minwt.com">iAPP網</a>
+		<a href="http://file.minwt.com">檔案庫</a>
+	</div>
+</div>
+
+  			<!----------------------------------------------Page Jump--------------------------------------------------------->
+	   	<a name="Top"></a>
+		   <!-------------------------------------------------Slide_show------------------------------------------------------>
+		   <div class="slideshow-container">
+
+		<div class="mySlides fade">
+			<!--Figure 1-->
+		  <div style="float:center; text-align:center">
+			<a href="http://www.fantasy-earth.com/event/20180404/" target="_blank">
+			  <img src="https://i.imgur.com/8C5zSd1.jpg" margin:auto border="0"></a></div>
+		</div>
+		<div class="mySlides fade">
+			<!--Figure 2-->
+			<div style="float:center; text-align:center">
+			<a href="http://www.fantasy-earth.com/event/roulette/index.php?r=flower" target="_blank">
+			  <img src="https://i.imgur.com/nkYjUF8.jpg" margin:auto border="0"></a></div>
+		</div>
+		<div class="mySlides fade">
+			<!--Figure 3-->
+			  <div style="float:center; text-align:center">
+			<a href="http://www.fantasy-earth.com/event/roulette/index.php?r=voiceclassic2" target="_blank">
+			  <img src="https://i.imgur.com/cgVSqYF.jpg" margin:auto border="0"></a></div>
+		</div>
+		</div>
+		<br>
+
+		<div style="text-align:center">
+		  <span class="dot"></span> 
+		  <span class="dot"></span> 
+		  <span class="dot"></span> 
+		</div>
+
+		<script>
+		var slideIndex = 0;
+		showSlides();
+
+		function showSlides() {
+			var i;
+			var slides = document.getElementsByClassName("mySlides");
+			var dots = document.getElementsByClassName("dot");
+			for (i = 0; i < slides.length; i++) {
+			   slides[i].style.display = "none";  
+			}
+			slideIndex++;
+			if (slideIndex > slides.length) {slideIndex = 1}    
+			for (i = 0; i < dots.length; i++) {
+				dots[i].className = dots[i].className.replace(" active", "");
+			}
+			slides[slideIndex-1].style.display = "block";  
+			dots[slideIndex-1].className += " active";
+			setTimeout(showSlides, 5000); // !!!Change image delat here!!!!
+		}
+		</script>
+   	<!-----------------------------------------------------Bulletin_Board-------------------------------------------->
+   	<div align=center valign=center>
+<table border=1 width=60%>
+ 
+  	<div>	<tr>
+		<th><div align=center valign=center><p id='Event' 		onclick="Event()">活動</p></div></th>
+		<th><div align=center valign=center><p id='maintenance' onclick="maintenance()">維修</p></div></th>
+	</div>
+	<div>
+	　<tr>
+			 <td colspan="2"><div id="R1">[施工中]快速儲值(金流系統)窗口1</div></td>	<!-- Row1-->
+　	</tr>
+　		　<tr>
+			 <td colspan="2"><div id="R2">[施工中]快速儲值(金流系統)窗口2</div></td>	<!-- Row2-->
+　	</tr>
+　		　<tr>
+			 <td colspan="2"><div id="R3">[施工中]快速儲值(金流系統)窗口3</div></td>	<!-- Row3-->
+　	</tr>
+　		　<tr>
+			 <td colspan="2"><div id="R4">[施工中]快速儲值(金流系統)窗口4</div></td>	<!-- Row4-->
+　	</tr>
+　		　<tr>
+			 <td colspan="2"><div id="R5">[施工中]快速儲值(金流系統)窗口5</div></td>	<!-- Row5-->
+　	</tr>
+	</div>
+
+</table>
+	</div>
+   	<!----------------------------------------------------<p id=Title>[遊戲性]</p>介紹------------------------------------------------------>
+   	<p align=center id=Title>[遊戲性]</p>
+   	<p align=center id=content>
+	Fantasy Earth Zero = FEZ為一款50v50大型國家戰爭遊戲，且PVP佔了90%的架構，只有少許的PVE成分<br>
+  	PVP平衡性不會因為誰消費的金額較多就有較優的戰果，各職業的裝備只提供了類似Skin的功能<br>
+  	每種職業的攻擊力與防禦力上限是固定的，這正是平衡之處<br>
+  	FEZ的戰果完全取決於操作者的能力，因此是一款非常適合當作第二人生的遊戲<br>
+  	FEZ除了戰鬥能力重要以外，還需要搭配後勤人員彼此相互的連結，才是一場完整的國戰.一場戰爭時間約25分鐘<br>
+  	國戰中會有許多可建築與破壞的建築物， 這些建築物對於戰爭主導權擁有非凡的影響力，因此戰鬥人員也需要培養後勤概念<br>
+  	歡迎加入FEZ這款遊戲，當作第二人生的起點
+  	
+  	
+   </p>
+    <!-----------------------------------------------------World Map---------------------------------------------------->
+<p align = "center" valign="center" id=Title > [World Map]</p>
+    <p align=center valign=center> <img src="https://i.imgur.com/sPJBckN.jpg" margin:auto></p>
+        <!---------------------------------------左半部外部連結,Skill simulator ---------------------------------------->
+    <div style="float:left; text-align:left">
+    <a href="http://game-room.info/fezskill/" target="_blank" title="Skill simulator">
+      <img src="https://i.imgur.com/p30zP40.jpg" margin:auto border="0"></a></div>
+      <!-----------------------------------------右半部外部連結,G430耳機------------------------------------------------->
+      <div style="float:right; text-align:right">
+    <a href="https://www.logitechg.com/zh-tw/product/g430-7-1-surround-sound-gaming-headset" target="_blank" title="Skill simulator">
+      <img src="https://www.logitechg.com/assets/47829/8/g430-gaming-headset-images.png" width=15% border="0"></a></div>
+      <br/><br/><br/><br/>
+        <!--------------------------------------左半部外部連結,Damage simulator------------------------------------------------------->
+          <div style="float:left; text-align:left">
+    <a href="http://rire.sakura.ne.jp/fez/dmg_culc/" target="_blank" title="Damage Simulator">
+      <img src="https://i.imgur.com/ihmWsMZ.jpg" margin:auto ></a></div>
+         <!--------------------------------------右半部外部連結,G300s--------------------------------------------------------------->
+            <div style="float:right; text-align:right">
+    <a href="https://www.logitechg.com/zh-tw/product/g300s-gaming-mouse" target="_blank" title="Skill simulator">
+      <img src="https://www.logitechg.com/assets/53016/logitech-gaming-mice-g300s.png" width=15% border="0"></a></div>
+      <br/><br/><br/><br/>
+             <!---------------------------------------------世界觀-------------------------------------------------------------------------------->
+    <h3 align="center">原為中央聯合帝國，因為種族、信仰、各自為政，分裂成五大帝國</h3>
+    <h3 align="center" valign="center">
+    <li id="a">納茨瓦王國 (Netzawar)</li>
+    <img src = "https://i.imgur.com/ANoN3JF.jpg" wmargin:auto></h3>
+    
+    <h3 align="center" valign="center">
+    <li id="b">霍爾丁王國 (Hordaine)</li>
+    <img src = "https://i.imgur.com/Or4bIm1.jpg" wmargin:auto></h3>
+    
+        <h3 align="center" valign="center">
+    <li id="c">埃索度王國 (Ielsord)</li>
+    <img src = "https://i.imgur.com/gCrIOWd.jpg" wmargin:auto></h3>
+    
+        <h3 align="center" valign="center">
+    <li id="d">卡薩多利亞聯合王國 (Casedria)</li>
+    <img src = "https://i.imgur.com/3fbDOKS.jpg" wmargin:auto></h3>
+    
+        <h3 align="center" valign="center">
+    <li id="e">蓋布蘭帝國(Geburand)</li>
+    <img src = "https://i.imgur.com/PFJlw2T.jpg" wmargin:auto></h3>
+    
+    <!----------------------------------------------------宣傳影片------------------------------------------------------------------->
+    <p align = "center" valign="center" id=Title>[宣傳影片]<br></p>
+    <!--Youtube影片嵌入-->
+    <p align = "center" valign="center">
+    <iframe width="640" height="360" src="https://www.youtube.com/embed/DlVLgksCNYM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </p>
+    <br>
+    <!---------------------------------------------------------遊戲官方網站-------------------------------------->
+    <a align = "center" valign="center" href="http://www.fantasy-earth.com" target="_blank"><h1>[遊戲官方網站]</h1></a>
+    <!---------------------------------------------------職業介紹------------------------------------------>
+	<p align = center valign=center id=Title>[職業介紹]</p>
+   	<p align=center valign=center id=content></p>
+   	<!---------------------------------------------------戰士介紹------------------------------------------>
+   	<div align=center id=content>
+   		<p id=ClassKey>戰士(Warrior)</p>
+		戰場上最重要的職業性質，可以破壞建築物，推動戰線，攻防兼具的核心職業<br>
+   		近距離絕對是戰士的天下，中距離也有一項技能能稍微牽制，遠距離非常弱勢<br>
+   		一場戰爭中，戰士的比例往往是決定勝負的關鍵<br>
+   	</div>
+	<div align=center>
+		<img src=http://www.fantasy-earth.com/old/pub/play/class/warrior_back.jpg wmargin:auto>
+		<img src=https://i.imgur.com/ecDhKjT.jpg wmargin:auto>
+		<br>
+		<p alifn=center id=keycolor>
+			[戰士完整技能樹請點下方圖片]
+		</p>
+		<a href=http://www.fantasy-earth.com/playguide/warrior.php target='blank'>
+		<img src=http://www.fantasy-earth.com/old/pub/play/class/class_btn_warrior_off.jpg wmargin:auto></a>
+	</div>
+	 <!---------------------------------------------------遊俠介紹------------------------------------------>
+		   	<div align=center id=content>
+				<p id=ClassKey>遊俠(Scout)</p>
+				專門給予異常狀態的職業，體系上分為匕首(完全近戰)與弓箭(中遠程)<br>
+				匕首給予的異常狀態是最為致命的，武器破壞、防禦破壞、移動下降、能量破壞.<br>
+				匕首體系和戰士之間是有著非常強烈的團隊組合，可謂前線共同體<br>
+				弓箭體系則是專門負責中遠距離的支援，戒備與偵查<br>
+				是專門反敵方法師與匕首遊俠的存在
+   	</div>
+	<div align=center>
+		<img src=http://www.fantasy-earth.com/old/pub/play/class/scout_back.jpg wmargin:auto>
+		<img src=https://i.imgur.com/6NpwpxH.jpg wmargin:auto>
+		<br>
+		<p alifn=center id=keycolor>
+			[遊俠完整技能樹請點下方圖片]
+		</p>
+		<a href=http://www.fantasy-earth.com/playguide/scout.php target='blank'>
+		<img src=http://www.fantasy-earth.com/old/pub/play/class/class_btn_scout_off.jpg wmargin:auto></a>
+	</div>
+	<!---------------------------------------------------法師介紹------------------------------------------>
+	<div align=center id=content>
+		<p id=ClassKey>法師(Sorcerer)</p>
+		中距離戰爭的職業,近與遠距離效果不彰<br>
+		專門負責大範圍魔法、單體魔法支援的職業，主要流派分為冰系(支援)與火系(輸出)<br>
+		其中又以冰系是戰爭的導火線，只要冷凍魔法使用時機正確，都會讓前線組爆發重大戰爭<br>
+		火系則是專門負責中距離的輸出機器，利用中距離的優勢，可造成近距離職業的嚴重破壞
+		</div>
+	<div align=center>
+		<img src=http://www.fantasy-earth.com/old/pub/play/class/sorcerer_back.jpg wmargin:auto>
+		<img src=https://i.imgur.com/ogwyBmY.jpg wmargin:auto>
+		<br>
+		<p alifn=center id=keycolor>
+			[法師完整技能樹請點下方圖片]
+		</p>
+		<a href=http://www.fantasy-earth.com/playguide/sorcerer.php target='blank'>
+		<img src=http://www.fantasy-earth.com/old/pub/play/class/class_btn_sorcerer_off.jpg wmargin:auto></a>
+	</div>
+	<!------------------------------------------擊劍士介紹--------------------------------------------->
+			<div align=center id=content>
+		<p id=ClassKey>擊劍士(Fencer)</p>
+		屬於近中距離的職業<br>
+		藉由靈敏的機動性作持續性的近中距離輸出，可使用中距離的符文(Rune=盧恩字母)<br>
+		給予對手刻印(Sigil)強化自身與友軍能力的技能組<br>
+		對於單體戰鬥的層面，擊劍士是非常棘手的存在，就連戰士都很難處理的職業<br>
+		擊劍士於團體戰當中也能擔任輸出手，能強制干擾近距離職業的攻擊能力，所以也是非常漂亮的支援手
+		</div>
+	<div align=center>
+		<img src=http://www.fantasy-earth.com/old/pub/play/class/fencer_back.jpg wmargin:auto>
+		<img src=https://i.imgur.com/hwdblo8.jpg wmargin:auto>
+		<br>
+		<p alifn=center id=keycolor>
+			[擊劍士完整技能樹請點下方圖片]
+		</p>
+		<a href=http://www.fantasy-earth.com/playguide/fencer.php target='blank'>
+		<img src=http://www.fantasy-earth.com/old/pub/play/class/class_btn_fencer_off.jpg wmargin:auto></a>
+	</div>
+		<!------------------------------------------拳鬥士介紹--------------------------------------------->
+			<div align=center id=content>
+		<p id=ClassKey>拳鬥士(Cetus)</p>
+		相對於擊劍士是持續輸出，拳鬥士是瞬間爆發能力的存在<br>
+		屬於完全近距離作戰能力的職業,可瞬間擁有全職業最高的防禦力，或是爆發輸出力的職業<br>
+		也是建築物的摧毀者，其強大的建築摧毀能力可謂全職第一，與後勤有非常強烈的連結<br>
+		在團體戰鬥當中非常棘手，可藉由暫時強化自身防禦力在人群中亂竄混淆視聽<br>
+		或是使用快速、超高的爆發輸出能力，強制破壞戰區的任何攻擊行為，使得戰區不成立，或是－加速結束
+		</div>
+	<div align=center>
+		<img src=http://www.fantasy-earth.com/old/pub/play/class/cestas_back.jpg wmargin:auto>
+		<img src=https://i.imgur.com/AuJvHtz.jpg wmargin:auto>
+		<br>
+		<p alifn=center id=keycolor>
+			[拳鬥士完整技能樹請點下方圖片]
+		</p>
+		<a href=http://www.fantasy-earth.com/playguide/cestas.php target='blank'>
+		<img src=http://www.fantasy-earth.com/old/pub/play/class/class_btn_cestas_off.jpg wmargin:auto></a>
+	</div>
+	<!------------------------------------------相剋介紹--------------------------------------------->
+			<p align=center id=ClassKey>基本三職業相剋介紹</p>
+	<p align=center><img src="http://www.fantasy-earth.com/old/pub/play/class/class_01.jpg"wmargin:auto ></p>
+  <div align=center>
+	<table border=1 width=50%>
+    <tr>
+        <th rowspan="2">自己</th>
+        <th colspan="3">對手</th>
+    </tr>
+
+    <tr>
+		<td><p align=center>戰士</p></td>
+		<td><p align=center>法師</p></td>
+		<td><p align=center>遊俠</p></td>
+    </tr>
+
+    <tr>
+		<td><p align=center>戰士</p></td>
+    <th></th>
+		<td><p align=center>攻擊傷害-10%<br>被攻擊傷害+10%</p></td>
+		<td><p align=center>攻擊傷害+10%<br>被攻擊傷害-10%</p></td>
+    </tr>
+
+    <tr>
+		<td><p align=center>法師</p></td>
+   		<td><p align=center>攻擊傷害+10%<br>被攻擊傷害-10%</p></td>
+		<td></td>
+        <td><p align=center>攻擊傷害-10%<br>被攻擊傷害+20%</p></td>
+    </tr>
+
+    <tr>
+		<td><p align=center>遊俠</p></td>
+    	<td><p align=center>攻擊傷害-10%<br>被攻擊傷害+10%</p></td>
+		<td><div align=center>攻擊傷害+20%<br>被攻擊傷害-10%</div></td>
+        <td></td>
+    </tr>
+</table>
+	</div>
+			<p id="keycolor" align=center>擊劍士與拳鬥士無任何傷害補正<br><br>
+			<img src=https://i.imgur.com/wQIf7oC.jpg>
+			</p>
+	 <!---------------------------------------------------------遊戲官方網站-------------------------------------->
+    <a align = "center" valign="center" href="http://www.fantasy-earth.com" target="_blank"><h1>[遊戲官方網站]</h1></a>
+    <center>
+	<a href="#Top">Top</a>
+	</center>
+
+
+</body>
+</html>

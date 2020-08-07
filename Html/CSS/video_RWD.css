@@ -1,0 +1,27 @@
+.video-container {
+
+position: relative;
+
+padding-bottom: 56.25%;
+
+padding-top: 30px;
+
+height: 0;
+
+overflow: hidden;
+
+}
+
+.video-container iframe, .video-container object, .video-container embed {
+
+position: absolute;
+
+top: 0;left: 0;
+
+width: 100%;
+
+height: 100%;}
+
+/*padding-bottom: 56.25% 為影片高度與寬度的比例16:9計算得來，9除以16=0.5625換算高度比0.5625=56.25%
+
+/*padding-top: 30px: 用於修正的高度，可用25px或30px

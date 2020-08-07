@@ -1,0 +1,8 @@
+img {
+    width:100%;
+    height: auto;
+}
+#imgO img{
+	width:30%;
+	height:auto;
+}

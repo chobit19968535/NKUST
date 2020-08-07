@@ -1,0 +1,7 @@
+ /*整個table的調整*/
+   table{
+   	border-collapse: collapse;
+   	/*自動斷行*/
+   	word-wrap: break-word;
+   	table-layout: fixed;
+   }

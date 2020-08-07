@@ -1,0 +1,22 @@
+#Title{
+	font-size:40PX;
+	color:blueviolet;
+	font-family:fantasy,monospace;
+	font-family:Microsoft JhengHei;
+}
+
+#content{
+	font-size:16px;
+		font-family:Microsoft JhengHei;
+}
+
+#ClassKey{
+	font-size:22px;
+	color:rgb(7, 7, 255);
+	font-weight:bold;
+	font-family:Microsoft JhengHei;
+}
+
+#keycolor{
+	color:red;
+}
