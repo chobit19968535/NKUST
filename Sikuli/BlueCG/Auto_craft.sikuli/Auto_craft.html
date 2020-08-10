@@ -1,0 +1,144 @@
+
+<html>
+   <head>
+      <style type="text/css">
+         .sikuli-code {
+            font-size: 20px;
+            font-family: "Osaka-mono", Monospace;
+            line-height: 1.5em;
+            display:table-cell;
+            white-space: pre-wrap;       /* css-3 */
+            white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+            white-space: -pre-wrap;      /* Opera 4-6 */
+            white-space: -o-pre-wrap;    /* Opera 7 */
+            word-wrap: break-word;       /* Internet Explorer 5.5+ */
+            width: 99%;   /* remove horizontal scroll-bar when viewing in IE7 */
+         }
+         .sikuli-code img {
+            vertical-align: middle;
+            margin: 2px;
+            border: 1px solid #ccc;
+            padding: 2px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-box-shadow: 1px 1px 1px gray;
+            -webkit-box-shadow: 1px 1px 2px gray;
+         }
+         .kw {
+            color: blue;
+         }
+         .skw {
+            color: rgb(63, 127, 127);
+         }
+
+         .str {
+            color: rgb(128, 0, 0);
+         }
+
+         .dig {
+            color: rgb(128, 64, 0);
+         }
+
+         .cmt {
+            color: rgb(200, 0, 200);
+         }
+
+         h2 {
+            display: inline;
+            font-weight: normal;
+         }
+
+         .info {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            display: none;
+         }
+
+         a {
+            color: #9D2900;
+         }
+
+         body {
+            font-family: "Trebuchet MS", Arial, Sans-Serif;
+         }
+
+      </style>
+   </head>
+<body>
+<div class="info">
+<h2>Auto_craft.sikuli</h2> <a href="Auto_craft.zip">(Download this script)</a>
+</div>
+<pre class="sikuli-code">
+<span class="cmt"># Models</span>
+<span class="kw">import</span> crafting
+<span class="kw">import</span> recover <span class="kw">as</span> rc
+<span class="kw">import</span> skill_window
+<span class="kw">import</span> trade2cargo
+<span class="kw">import</span> cargo_self
+<span class="cmt">#---------------------------------------------</span>
+<span class="skw">wait</span>(<span class="dig">1</span>)
+logo = <img src="logo.png" />
+hover(logo)
+<span class="skw">click</span>(logo)
+
+method = <span class="dig">0</span> <span class="cmt"># 0 = cook, 1=potion</span>
+rank = <span class="dig">61</span> <span class="cmt"># 60= 6A, 61= 6B</span>
+half_cost = <span class="dig">1</span> <span class="cmt"># 1 = 50%, 0 = 100%</span>
+max_FP = <span class="dig">696</span>
+mat_count = [ <span class="dig">80</span>, <span class="dig">80</span>, <span class="dig">80</span>, <span class="dig">80</span>, <span class="dig">80</span>]
+<span class="cmt">#mat_count = [80]*5</span>
+flag_trade = <span class="dig">1</span>
+chest_flag = <span class="dig">0</span>
+Self = <span class="dig">0</span>
+<span class="cmt">#--------------------------------------------</span>
+count = <span class="dig">1</span>
+item = <span class="dig">1</span>
+<span class="cmt"># Get materials</span>
+<span class="kw">if</span> method == <span class="dig">0</span>:
+    <span class="kw">import</span> material_cook
+    X, FP_cost, mat_cost = material_cook.getrecipe(rank, half_cost)
+
+<span class="kw">elif</span> method == <span class="dig">1</span>:
+    <span class="cmt"># Method = 1 , potion</span>
+    <span class="kw">import</span> material_potion
+    X, FP_cost, mat_cost = material_potion.getrecipe(rank, half_cost)
+
+<span class="kw">elif</span> method == <span class="dig">2</span>:
+    <span class="cmt"># Bomb</span>
+    <span class="kw">import</span> material_bomb
+    X, FP_cost, mat_cost = material_bomb.getrecipe(rank, half_cost)
+
+period = int(max_FP/FP_cost)
+skill_window.workspace(method, rank)
+<span class="skw">wait</span>(<span class="dig">1</span>)
+<span class="kw">while</span> (True):
+    mat_count = crafting.cft(X, method, rank, mat_count, mat_cost, chest_flag)
+    <span class="kw">if</span> (count == period):
+        <span class="cmt"># Recover FP</span>
+        rc.FP()
+        count = <span class="dig">1</span>
+        <span class="skw">click</span>(<img src="1578289873745.png" />)
+        hover(<img src="1594964442431.png" />)
+        <span class="skw">wait</span>(<span class="dig">0.25</span>)
+        skill_window.workspace(method, rank)
+    count += <span class="dig">1</span>
+    item += <span class="dig">1</span>
+    <span class="kw">if</span> flag_trade:
+        <span class="kw">if</span> (item % <span class="dig">12</span>) == <span class="dig">0</span>:
+            running = <span class="dig">1</span>
+            <span class="kw">while</span>(running):
+                <span class="kw">if</span> exists (<img src="1578289873745.png" />):
+                    <span class="skw">click</span>(<img src="1578289873745.png" />)
+                    <span class="skw">wait</span>(<span class="dig">0.3</span>)
+                <span class="kw">else</span>:
+                    running = <span class="dig">0</span>
+            trade2cargo.cargo(method, rank)
+            item = <span class="dig">0</span>
+    <span class="kw">if</span> Self:
+        <span class="kw">if</span> (item % <span class="dig">16</span>) == <span class="dig">0</span>:
+            cargo_self.package(method, rank)
+            item = <span class="dig">0</span>
+</pre>
+</body>
+</html>

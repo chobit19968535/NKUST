@@ -1,0 +1,499 @@
+
+<html>
+   <head>
+      <style type="text/css">
+         .sikuli-code {
+            font-size: 20px;
+            font-family: "Osaka-mono", Monospace;
+            line-height: 1.5em;
+            display:table-cell;
+            white-space: pre-wrap;       /* css-3 */
+            white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+            white-space: -pre-wrap;      /* Opera 4-6 */
+            white-space: -o-pre-wrap;    /* Opera 7 */
+            word-wrap: break-word;       /* Internet Explorer 5.5+ */
+            width: 99%;   /* remove horizontal scroll-bar when viewing in IE7 */
+         }
+         .sikuli-code img {
+            vertical-align: middle;
+            margin: 2px;
+            border: 1px solid #ccc;
+            padding: 2px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-box-shadow: 1px 1px 1px gray;
+            -webkit-box-shadow: 1px 1px 2px gray;
+         }
+         .kw {
+            color: blue;
+         }
+         .skw {
+            color: rgb(63, 127, 127);
+         }
+
+         .str {
+            color: rgb(128, 0, 0);
+         }
+
+         .dig {
+            color: rgb(128, 64, 0);
+         }
+
+         .cmt {
+            color: rgb(200, 0, 200);
+         }
+
+         h2 {
+            display: inline;
+            font-weight: normal;
+         }
+
+         .info {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            display: none;
+         }
+
+         a {
+            color: #9D2900;
+         }
+
+         body {
+            font-family: "Trebuchet MS", Arial, Sans-Serif;
+         }
+
+      </style>
+   </head>
+<body>
+<div class="info">
+<h2>get_material.sikuli</h2> <a href="get_material.zip">(Download this script)</a>
+</div>
+<pre class="sikuli-code">
+<span class="kw">from</span> sikuli <span class="kw">import</span> *
+<span class="kw">import</span> auto_trader
+<span class="kw">import</span> skill_window
+
+<span class="kw">def</span> open_box(mat, rank, method, chest_flag):
+    <span class="kw">def</span> mat_check(mat):
+        icon = <img src="icon.png" />
+        <span class="kw">for</span> index, val <span class="kw">in</span> enumerate(img_list):
+            <span class="kw">if</span> (val == mat):
+                <span class="kw">if</span> val == img_h6_1:
+                    running = <span class="dig">1</span>
+                    hover(icon)
+                    <span class="skw">wait</span>(<span class="dig">0.25</span>)
+                    <span class="kw">if</span> exists (img_h6_1):
+                        condidates = <span class="skw">find</span>(val)
+                        <span class="skw">doubleClick</span>(condidates)
+                        <span class="skw">wait</span>(<span class="dig">0.7</span>)
+                        <span class="skw">doubleClick</span>(condidates)
+                        <span class="skw">wait</span>(<span class="dig">0.3</span>)
+                        <span class="skw">type</span>(<span class="str">"/re"</span> + Key.ENTER)
+                        <span class="kw">break</span>
+                    <span class="kw">else</span>:
+                        <span class="cmt"># Trade with mat_container to get Box</span>
+                        string =  text_list[index]
+                        auto_trader.trade([string],chest_flag)
+                        <span class="cmt"># Open Backpack</span>
+                        <span class="kw">print</span>(<span class="str">"Open Backpacks"</span>)
+                        keyDown(Key.CTRL)
+                        keyDown(<span class="str">"e"</span>)
+                        <span class="skw">wait</span>(<span class="dig">1.0</span>)
+                        keyUp(Key.CTRL)
+                        keyUp(<span class="str">"e"</span>)
+                        <span class="cmt"># Open sugar </span>
+                        condidates = <span class="skw">find</span>(val)
+                        <span class="skw">doubleClick</span>(condidates)
+                        <span class="skw">wait</span>(<span class="dig">0.7</span>)
+                        <span class="skw">doubleClick</span>(condidates)
+                        <span class="skw">wait</span>(<span class="dig">0.3</span>)
+                        <span class="skw">type</span>(<span class="str">"/re"</span> + Key.ENTER)
+                        <span class="kw">break</span>
+                running = True
+                <span class="kw">while</span> (running):
+                    hover(<img src="logo.png" />)
+                    <span class="skw">wait</span>(<span class="dig">0.3</span>)
+                    boxes = findAll(mat_box)
+                    <span class="kw">for</span> i <span class="kw">in</span> boxes:
+                        hover(i)
+                        string =  text_list[index]
+                        <span class="kw">if</span> exists( string,<span class="dig">1</span>):
+                            running = False
+                            <span class="skw">doubleClick</span>(i)
+                            <span class="kw">break</span>
+                    <span class="cmt"># Trade with mat_container to get Box</span>
+                    <span class="kw">if</span> running :
+                        auto_trader.trade([string],chest_flag)
+                        <span class="cmt"># Open Backpack</span>
+                        <span class="kw">print</span>(<span class="str">"Open Backpacks"</span>)
+                        keyDown(Key.CTRL)
+                        keyDown(<span class="str">"e"</span>)
+                        <span class="skw">wait</span>(<span class="dig">1.0</span>)
+                        keyUp(Key.CTRL)
+                        keyUp(<span class="str">"e"</span>)
+        <span class="kw">return</span>()
+
+    mat_box =  <img src="1578238799075.png" />
+    <span class="cmt">##### Texts ######</span>
+    text_h1_3 = <img src="text_h1_3.png" />
+    text_h1_4 = <img src="1578675333208.png" />
+    text_h2_1 = <img src="text_h2_1.png" />
+    text_h2_2 = <img src="1578675354944.png" />
+    text_h3_1 = <img src="1578239688504.png" />
+    text_h3_2 = Pattern(<img src="1578239742771.png" />).similar(<span class="dig">0.50</span>)
+    text_h4_3 = <img src="text_h4_3.png" />
+    text_h4_4 = <img src="1578542482103.png" />
+    text_h5_1 = Pattern(<img src="1578239774858.png" />).similar(<span class="dig">0.50</span>)
+    text_h5_4 = <img src="1595052549070.png" />
+    text_h5_5 = Pattern(<img src="1578542460520.png" />).similar(<span class="dig">0.80</span>)
+    text_h6_1 = <img src="1578239824046.png" />
+    text_h6_2 = <img src="1578542392435.png" />
+    text_h7_2 = <img src="text_h7_2.png" />
+    text_h7_3 = <img src="1578542495348.png" />
+    text_h8_1 = <img src="text_h8_1.png" />
+    text_h9_1 = <img src="text_h9_1.png" />
+    text_h9_2 = <img src="text_h9_2.png" />
+    text_h10_1= <img src="1595052709020.png" />
+
+    text_w4_1 = <img src="text_w4_1.png" />
+    text_w5_1 = <img src="text_w5_1.png" />
+    text_w6_1 = <img src="text_w6_1.png" />
+    text_list = [text_h1_3, text_h1_4, text_h2_1, text_h2_2, text_h3_1, text_h3_2, text_h4_3, text_h4_4, text_h5_1, text_h5_4, text_h5_5, text_h6_1, text_h6_2, text_h7_2, text_h7_3, text_h8_1, text_h9_1, text_h9_2, text_h10_1
+                    ,text_w4_1, text_w5_1, text_w6_1]
+
+    <span class="cmt">###### Images #####</span>
+    img_h1_3 = <img src="h1_3.png" />
+    img_h1_4 =  <img src="h1_4.png" />
+    img_h2_1 =  <img src="h2_1.png" />
+    img_h2_2 =  <img src="h2_2.png" />
+    img_h3_1 =  <img src="h3_1.png" />
+    img_h3_2 =  <img src="h3_2.png" />
+    img_h4_3 = <img src="h4_3.png" />
+    img_h4_4 = <img src="h4_4.png" />
+    img_h5_1 =  <img src="h5_1.png" />
+    img_h5_4 = <img src="h5_4.png" />
+    img_h5_5 = <img src="h5_5.png" />
+    img_h6_1 =  <img src="h6_1.png" />
+    img_h6_2 = <img src="h6_2.png" />
+    img_h7_2 = <img src="h7_2.png" />
+    img_h7_3 = <img src="h7_3.png" />
+    img_h8_1 = <img src="h8_1.png" />
+    img_h9_1 = <img src="h9_1.png" />
+    img_h9_2 = <img src="h9_2.png" />
+    img_h10_1 = <img src="h10_1.png" />
+
+    img_w4_1 = <img src="w4_1.png" />
+    img_w5_1 = <img src="w5_1.png" />
+    img_w6_1 = <img src="w6_1.png" />
+    img_list = [  img_h1_3, img_h1_4,  img_h2_1,  img_h2_2,  img_h3_1,  img_h3_2, img_h4_3,  img_h4_4,  img_h5_1, img_h5_4,  img_h5_5,  img_h6_1,  img_h6_2, img_h7_2,  img_h7_3, img_h8_1, img_h9_1, img_h9_2, img_h10_1
+                      ,img_w4_1, img_w5_1, img_w6_1]
+<span class="cmt">##################################################################</span>
+    <span class="kw">if</span> method == <span class="dig">0</span>:
+        <span class="kw">if</span> rank == <span class="dig">21</span>:
+            M = [text_h1_4, text_h2_2, text_h3_1]
+            <span class="kw">try</span>:
+                boxes = findAll(mat_box)
+            <span class="kw">except</span>:
+                <span class="cmt"># If no founding any boxes, trade with mat_container to get All mat_boxes</span>
+                <span class="kw">print</span>(<span class="str">"into except mode, name = get all boxes"</span>)
+
+            <span class="kw">if</span> mat == img_h1_4:
+                count = <span class="dig">0</span>
+                <span class="kw">for</span> i <span class="kw">in</span> boxes:
+                    hover(i)
+                    <span class="kw">if</span> exists( text_h1_4,<span class="dig">1</span>):
+                        <span class="skw">doubleClick</span>(i)
+                        <span class="kw">break</span>
+                    <span class="kw">else</span>:
+                        <span class="cmt"># Trade with mat_container to get Box    \</span>
+                        <span class="kw">print</span>(<span class="str">""</span>)
+            <span class="kw">elif</span> mat == img_h2_2:
+                count = <span class="dig">0</span>
+                <span class="kw">for</span> i <span class="kw">in</span> boxes:
+                    hover(i)
+                    <span class="kw">if</span> exists(text_h2_2 , <span class="dig">1</span>):
+                        <span class="skw">doubleClick</span>(i)
+                        <span class="kw">break</span>
+                    <span class="kw">else</span>:
+                        <span class="cmt"># Trade with mat_container to get Box</span>
+                        <span class="kw">print</span>(<span class="str">""</span>)
+            <span class="kw">elif</span> mat == img_h3_1:
+                count = <span class="dig">0</span>
+                <span class="kw">for</span> i <span class="kw">in</span> boxes:
+                    hover(i)
+                    <span class="kw">if</span> exists(text_h3_1,<span class="dig">1</span>):
+                        <span class="skw">doubleClick</span>(i)
+                        <span class="kw">break</span>
+                    <span class="kw">else</span>:
+                        <span class="cmt"># Trade with mat_container to get Box</span>
+                        <span class="kw">print</span>(<span class="str">""</span>)
+    <span class="cmt">######################################################################################</span>
+        <span class="kw">if</span> rank == <span class="dig">61</span>:
+            M = [text_h2_1, text_h3_1, text_h3_2, text_h5_1, text_h6_1]
+            running = True
+            <span class="kw">while</span>( running ):
+                <span class="kw">try</span>:
+                    boxes = findAll(mat_box)
+                    running = False
+                <span class="kw">except</span>:
+                    <span class="kw">print</span>(<span class="str">"Nice boat!!!"</span>)
+                    auto_trader.trade(M, chest_flag)
+                    flag = <span class="dig">1</span>
+                    <span class="kw">while</span>(flag == <span class="dig">1</span>):
+                        a = <img src="a.png" />
+                        <span class="kw">if</span> exists(a):
+                            <span class="skw">click</span>(a)
+                        <span class="kw">else</span>:
+                            flag = <span class="dig">0</span>
+
+                    hover(<img src="1579087525768.png" />)
+                    <span class="skw">wait</span>(<span class="dig">1.0</span>)
+                    keyDown(Key.CTRL)
+                    keyDown(<span class="str">"e"</span>)
+                    <span class="skw">wait</span>(<span class="dig">1</span>)
+                    keyUp(Key.CTRL)
+                    keyUp(<span class="str">"e"</span>)
+            mat_check(mat)
+    <span class="cmt">#########################################################################################</span>
+        <span class="kw">if</span> rank == <span class="dig">70</span>:
+            M = [text_h1_3, text_h3_1, text_h5_1, text_h6_2, text_h7_2]
+            running = True
+            <span class="kw">while</span>( running ):
+                <span class="kw">try</span>:
+                    boxes = findAll(mat_box)
+                    running = False
+                <span class="kw">except</span>:
+                    <span class="kw">print</span>(<span class="str">"Nice boat!!!"</span>)
+                    auto_trader.trade(M, chest_flag)
+                    flag = <span class="dig">1</span>
+                    <span class="kw">while</span>(flag == <span class="dig">1</span>):
+                        a = <img src="a.png" />
+                        <span class="kw">if</span> exists(a):
+                            <span class="skw">click</span>(a)
+                        <span class="kw">else</span>:
+                            flag = <span class="dig">0</span>
+
+                    hover(<img src="1579087525768.png" />)
+                    <span class="skw">wait</span>(<span class="dig">1.0</span>)
+                    keyDown(Key.CTRL)
+                    keyDown(<span class="str">"e"</span>)
+                    <span class="skw">wait</span>(<span class="dig">1</span>)
+                    keyUp(Key.CTRL)
+                    keyUp(<span class="str">"e"</span>)
+            mat_check(mat)
+    <span class="cmt">#########################################################################################</span>
+        <span class="kw">if</span> rank == <span class="dig">71</span>:
+            M = [text_h6_2, text_h2_1, text_h4_4, text_h5_5, text_h7_3]
+            running = True
+            <span class="kw">while</span>( running ):
+                <span class="kw">try</span>:
+                    boxes = findAll(mat_box)
+                    running = False
+                <span class="kw">except</span>:
+                    <span class="kw">print</span>(<span class="str">"Nice boat!!!"</span>)
+                    auto_trader.trade(M, chest_flag)
+                    flag = <span class="dig">1</span>
+                    <span class="kw">while</span>(flag == <span class="dig">1</span>):
+                        a = <img src="a.png" />
+                        <span class="kw">if</span> exists(a):
+                            <span class="skw">click</span>(a)
+                        <span class="kw">else</span>:
+                            flag = <span class="dig">0</span>
+
+                    hover(<img src="1579087525768.png" />)
+                    <span class="skw">wait</span>(<span class="dig">1.0</span>)
+                    keyDown(Key.CTRL)
+                    keyDown(<span class="str">"e"</span>)
+                    <span class="skw">wait</span>(<span class="dig">1</span>)
+                    keyUp(Key.CTRL)
+                    keyUp(<span class="str">"e"</span>)
+            mat_check(mat)
+    <span class="cmt">#########################################################################################</span>
+        <span class="kw">if</span> rank == <span class="dig">80</span>:
+            M = [text_h2_1, text_h3_2, text_h5_5, text_h7_2, text_h8_1]
+            running = True
+            <span class="kw">while</span>( running ):
+                <span class="kw">try</span>:
+                    boxes = findAll(mat_box)
+                    running = False
+                <span class="kw">except</span>:
+                    <span class="kw">print</span>(<span class="str">"Nice boat!!!"</span>)
+                    auto_trader.trade(M, chest_flag)
+                    flag = <span class="dig">1</span>
+                    <span class="kw">while</span>(flag == <span class="dig">1</span>):
+                        a = <img src="a.png" />
+                        <span class="kw">if</span> exists(a):
+                            <span class="skw">click</span>(a)
+                        <span class="kw">else</span>:
+                            flag = <span class="dig">0</span>
+
+                    hover(<img src="1579087525768.png" />)
+                    <span class="skw">wait</span>(<span class="dig">1.0</span>)
+                    keyDown(Key.CTRL)
+                    keyDown(<span class="str">"e"</span>)
+                    <span class="skw">wait</span>(<span class="dig">1</span>)
+                    keyUp(Key.CTRL)
+                    keyUp(<span class="str">"e"</span>)
+            mat_check(mat)
+    <span class="cmt">#########################################################################################</span>
+        <span class="kw">if</span> rank == <span class="dig">101</span>:
+            M = [text_h1_3, text_h2_1, text_h3_1, text_h5_4, text_h10_1]
+            running = True
+            <span class="kw">while</span>( running ):
+                <span class="kw">try</span>:
+                    boxes = findAll(mat_box)
+                    running = False
+                <span class="kw">except</span>:
+                    <span class="kw">print</span>(<span class="str">"Nice boat!!!"</span>)
+                    auto_trader.trade(M, chest_flag)
+                    flag = <span class="dig">1</span>
+                    <span class="kw">while</span>(flag == <span class="dig">1</span>):
+                        a = <img src="a.png" />
+                        <span class="kw">if</span> exists(a):
+                            <span class="skw">click</span>(a)
+                        <span class="kw">else</span>:
+                            flag = <span class="dig">0</span>
+
+                    hover(<img src="1579087525768.png" />)
+                    <span class="skw">wait</span>(<span class="dig">1.0</span>)
+                    keyDown(Key.CTRL)
+                    keyDown(<span class="str">"e"</span>)
+                    <span class="skw">wait</span>(<span class="dig">1</span>)
+                    keyUp(Key.CTRL)
+                    keyUp(<span class="str">"e"</span>)
+            mat_check(mat)
+    <span class="cmt">#########################################################################################</span>
+        <span class="kw">if</span> rank == <span class="dig">91</span>:
+            M = [text_h1_3, text_h3_2, text_h4_3, text_h9_1, text_h9_2]
+            running = True
+            <span class="kw">while</span>( running ):
+                <span class="kw">try</span>:
+                    boxes = findAll(mat_box)
+                    running = False
+                <span class="kw">except</span>:
+                    <span class="kw">print</span>(<span class="str">"Nice boat!!!"</span>)
+                    auto_trader.trade(M, chest_flag)
+                    flag = <span class="dig">1</span>
+                    <span class="kw">while</span>(flag == <span class="dig">1</span>):
+                        a = <img src="a.png" />
+                        <span class="kw">if</span> exists(a):
+                            <span class="skw">click</span>(a)
+                        <span class="kw">else</span>:
+                            flag = <span class="dig">0</span>
+
+                    hover(<img src="1579087525768.png" />)
+                    <span class="skw">wait</span>(<span class="dig">1.0</span>)
+                    keyDown(Key.CTRL)
+                    keyDown(<span class="str">"e"</span>)
+                    <span class="skw">wait</span>(<span class="dig">1</span>)
+                    keyUp(Key.CTRL)
+                    keyUp(<span class="str">"e"</span>)
+            mat_check(mat)
+    <span class="kw">else</span>:
+<span class="cmt">################### Potion ############################################################## </span>
+<span class="cmt">######################################################################################</span>
+        <span class="kw">if</span> rank == <span class="dig">60</span>:
+            <span class="kw">print</span>(<span class="str">"Potion Rank : 60"</span>)
+            M = [text_w4_1, text_w5_1, text_w6_1]
+            running = True
+            <span class="kw">while</span>( running ):
+                <span class="kw">try</span>:
+                    boxes = findAll(mat_box)
+                    running = False
+                <span class="kw">except</span>:
+                    <span class="kw">print</span>(<span class="str">"Fuck"</span>)
+                    auto_trader.trade(M, chest_flag)
+                    flag = <span class="dig">1</span>
+                    <span class="kw">while</span>(flag == <span class="dig">1</span>):
+                        a = <img src="a.png" />
+                        <span class="kw">if</span> exists(a):
+                            <span class="skw">click</span>(a)
+                        <span class="kw">else</span>:
+                            flag = <span class="dig">0</span>
+
+                    hover(<img src="1579087525768.png" />)
+                    <span class="skw">wait</span>(<span class="dig">1.0</span>)
+                    keyDown(Key.CTRL)
+                    keyDown(<span class="str">"e"</span>)
+                    <span class="skw">wait</span>(<span class="dig">1</span>)
+                    keyUp(Key.CTRL)
+                    keyUp(<span class="str">"e"</span>)
+            <span class="kw">if</span> mat == img_w4_1:
+                <span class="kw">print</span>(<span class="str">"Match img_w4_1"</span>)
+                running = True
+                <span class="kw">while</span> (running):
+                    boxes = findAll(mat_box)
+                    <span class="kw">for</span> i <span class="kw">in</span> boxes:
+                        hover(i)
+                        string =  text_w4_1
+                        <span class="kw">if</span> exists( string,<span class="dig">1</span>):
+                            running = False
+                            <span class="skw">doubleClick</span>(i)
+                            <span class="kw">break</span>
+                    <span class="cmt"># Trade with mat_container to get Box</span>
+                    <span class="kw">if</span> running :
+                        auto_trader.trade([string], chest_flag)
+                        <span class="cmt"># Open Backpack</span>
+                        <span class="kw">print</span>(<span class="str">"Open Backpacks"</span>)
+                        keyDown(Key.CTRL)
+                        keyDown(<span class="str">"e"</span>)
+                        <span class="skw">wait</span>(<span class="dig">1.0</span>)
+                        keyUp(Key.CTRL)
+                        keyUp(<span class="str">"e"</span>)
+            <span class="kw">elif</span> mat == img_w5_1:
+                <span class="kw">print</span>(<span class="str">"Match img_w5_1"</span>)
+                running = True
+                <span class="kw">while</span>(running):
+                    boxes = findAll(mat_box)
+                    <span class="kw">for</span> i <span class="kw">in</span> boxes:
+                        hover(i)
+                        string = text_w5_1
+                        <span class="kw">if</span> exists(string, <span class="dig">1</span>):
+                            running = False
+                            <span class="skw">doubleClick</span>(i)
+                            <span class="kw">break</span>
+                    <span class="kw">if</span> running:
+                        <span class="cmt"># Trade with mat_container to get Box</span>
+                        auto_trader.trade([string], chest_flag)
+                        <span class="cmt"># Open Backpack</span>
+                        <span class="kw">print</span>(<span class="str">"Open Backpacks"</span>)
+                        keyDown(Key.CTRL)
+                        keyDown(<span class="str">"e"</span>)
+                        <span class="skw">wait</span>(<span class="dig">1.0</span>)
+                        keyUp(Key.CTRL)
+                        keyUp(<span class="str">"e"</span>)
+            <span class="kw">elif</span> mat ==    img_w6_1:
+                <span class="kw">print</span>(<span class="str">"Match img_6_1"</span>)
+                running = True
+                <span class="kw">while</span>(running):
+                    boxes = findAll(mat_box)
+                    <span class="kw">for</span> i <span class="kw">in</span> boxes:
+                        hover(i)
+                        string =text_w6_1
+                        <span class="kw">if</span> exists(string,<span class="dig">1</span>):
+                            running = False
+                            <span class="skw">doubleClick</span>(i)
+                            <span class="kw">break</span>
+                    <span class="kw">if</span> running:
+                        <span class="cmt"># Trade with mat_container to get Box</span>
+                        auto_trader.trade([string], chest_flag)
+                        <span class="skw">wait</span>(<span class="dig">0.5</span>)
+                        <span class="cmt"># Open Backpack</span>
+                        <span class="kw">print</span>(<span class="str">"Open Backpacks"</span>)
+                        keyDown(Key.CTRL)
+                        keyDown(<span class="str">"e"</span>)
+                        <span class="skw">wait</span>(<span class="dig">1.0</span>)
+                        keyUp(Key.CTRL)
+                        keyUp(<span class="str">"e"</span>)
+            <span class="kw">else</span>:
+                <span class="kw">print</span>(<span class="str">"Mat_error :  "</span> , mat )
+                <span class="kw">print</span>( <span class="str">"matType : "</span>, mat)
+                <span class="kw">print</span>(<span class="str">" imgType : "</span>, img_w5_1)
+                <span class="kw">print</span>( mat == img_w5_1)
+                <span class="kw">raise</span>(<span class="str">" Mat error"</span>)
+    <span class="cmt">#########################################################################################</span>
+
+</pre>
+</body>
+</html>

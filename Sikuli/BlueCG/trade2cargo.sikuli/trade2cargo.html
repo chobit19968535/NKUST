@@ -1,0 +1,149 @@
+
+<html>
+   <head>
+      <style type="text/css">
+         .sikuli-code {
+            font-size: 20px;
+            font-family: "Osaka-mono", Monospace;
+            line-height: 1.5em;
+            display:table-cell;
+            white-space: pre-wrap;       /* css-3 */
+            white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+            white-space: -pre-wrap;      /* Opera 4-6 */
+            white-space: -o-pre-wrap;    /* Opera 7 */
+            word-wrap: break-word;       /* Internet Explorer 5.5+ */
+            width: 99%;   /* remove horizontal scroll-bar when viewing in IE7 */
+         }
+         .sikuli-code img {
+            vertical-align: middle;
+            margin: 2px;
+            border: 1px solid #ccc;
+            padding: 2px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-box-shadow: 1px 1px 1px gray;
+            -webkit-box-shadow: 1px 1px 2px gray;
+         }
+         .kw {
+            color: blue;
+         }
+         .skw {
+            color: rgb(63, 127, 127);
+         }
+
+         .str {
+            color: rgb(128, 0, 0);
+         }
+
+         .dig {
+            color: rgb(128, 64, 0);
+         }
+
+         .cmt {
+            color: rgb(200, 0, 200);
+         }
+
+         h2 {
+            display: inline;
+            font-weight: normal;
+         }
+
+         .info {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            display: none;
+         }
+
+         a {
+            color: #9D2900;
+         }
+
+         body {
+            font-family: "Trebuchet MS", Arial, Sans-Serif;
+         }
+
+      </style>
+   </head>
+<body>
+<div class="info">
+<h2>trade2cargo.sikuli</h2> <a href="trade2cargo.zip">(Download this script)</a>
+</div>
+<pre class="sikuli-code">
+<span class="kw">from</span> sikuli <span class="kw">import</span> *
+<span class="kw">import</span> skill_window
+
+<span class="kw">def</span> cargo(method, rank):
+    cargo_locate = Location(<span class="dig">230</span>, <span class="dig">424</span>)
+    maker_locate = Location(<span class="dig">229</span>, <span class="dig">100</span>)
+    game_icon = <img src="game_icon.png" />
+    <span class="kw">if</span> rank == <span class="dig">61</span>:
+        item = <img src="item_C61.png" />
+    <span class="kw">elif</span> rank == <span class="dig">70</span>:
+        item = <img src="item_C70.png" />
+    <span class="kw">elif</span> rank == <span class="dig">71</span>:
+        item = <img src="item_C71.png" />
+    <span class="kw">elif</span> rank == <span class="dig">80</span>:
+        item = <img src="item_C80.png" />
+    <span class="kw">elif</span> rank == <span class="dig">91</span>:
+        item = <img src="item_C91.png" />
+    <span class="kw">elif</span> rank == <span class="dig">101</span>:
+        item = <img src="item.png" />
+    cargo =  <img src="1579265714735.png" />
+    <span class="skw">click</span>(<img src="1579265672127.png" />)
+    <span class="skw">click</span>(cargo)
+    results = findAll(item)
+    <span class="kw">for</span> i <span class="kw">in</span> results:
+        hover(i)
+        <span class="skw">doubleClick</span>(i)
+    <span class="skw">click</span>(<img src="1579265850844.png" />)
+    hover(game_icon)
+    <span class="skw">wait</span>(<span class="dig">2</span>)
+    <span class="skw">click</span>(cargo_locate) <span class="cmt"># Click Cargo_account</span>
+    <span class="skw">wait</span>(<span class="dig">0.5</span>)
+    <span class="skw">click</span>(<img src="1579265850844.png" />)
+    <span class="skw">wait</span>(<span class="dig">0.25</span>)
+    <span class="skw">click</span>(<img src="1579265996503.png" />)
+    <span class="skw">wait</span>(<span class="dig">0.25</span>)
+    hover(game_icon)
+    <span class="skw">wait</span>(<span class="dig">2</span>)
+    <span class="skw">click</span>(maker_locate) <span class="cmt"># Click Maker_account</span>
+    <span class="skw">wait</span>(<span class="dig">0.25</span>)
+    <span class="skw">click</span>(<img src="1579265996503.png" />)
+
+    <span class="cmt">##### Packge Items #######</span>
+    hover(game_icon)
+    <span class="skw">wait</span>(<span class="dig">2</span>)
+    <span class="skw">click</span>(cargo_locate) <span class="cmt"># Click Cargo_account</span>
+    hover(<img src="1594962398602.png" />)
+    <span class="skw">wait</span>(<span class="dig">0.5</span>)
+    <span class="cmt"># Open Backpack</span>
+    <span class="kw">print</span>(<span class="str">"Open Backpacks"</span>)
+    keyDown(Key.CTRL)
+    keyDown(<span class="str">"e"</span>)
+    <span class="skw">wait</span>(<span class="dig">1.0</span>)
+    keyUp(Key.CTRL)
+    keyUp(<span class="str">"e"</span>)
+    <span class="skw">type</span>(<span class="str">"/re"</span> + Key.ENTER)
+    <span class="skw">wait</span>(<span class="dig">1.5</span>)
+    <span class="skw">doubleClick</span>(Pattern(<img src="1579266242987.png" />).similar(<span class="dig">0.90</span>))
+    hover(game_icon)
+    <span class="skw">wait</span>(<span class="dig">2</span>)
+    <span class="skw">click</span>(maker_locate) <span class="cmt"># Click Maker_account</span>
+    <span class="skw">wait</span>(<span class="dig">0.3</span>)
+    <span class="cmt">###### Close All windows</span>
+    flag = <span class="dig">0</span>
+    <span class="kw">while</span>(flag == <span class="dig">0</span>):
+        <span class="cmt"># Close allwindows</span>
+        <span class="kw">print</span>(<span class="str">"Close allwindows"</span>)
+        <span class="kw">if</span> exists(<img src="1578248310719.png" />):
+            <span class="skw">click</span>(<img src="1578248310719.png" />)
+            <span class="skw">wait</span>(<span class="dig">0.2</span>)
+        <span class="kw">else</span> :
+            flag = <span class="dig">1</span>
+    hover(<img src="1594962398602.png" />)
+    skill_window.workspace(method, rank)
+    <span class="kw">return</span>()
+</pre>
+</body>
+</html>

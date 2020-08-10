@@ -1,0 +1,268 @@
+
+<html>
+   <head>
+      <style type="text/css">
+         .sikuli-code {
+            font-size: 20px;
+            font-family: "Osaka-mono", Monospace;
+            line-height: 1.5em;
+            display:table-cell;
+            white-space: pre-wrap;       /* css-3 */
+            white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+            white-space: -pre-wrap;      /* Opera 4-6 */
+            white-space: -o-pre-wrap;    /* Opera 7 */
+            word-wrap: break-word;       /* Internet Explorer 5.5+ */
+            width: 99%;   /* remove horizontal scroll-bar when viewing in IE7 */
+         }
+         .sikuli-code img {
+            vertical-align: middle;
+            margin: 2px;
+            border: 1px solid #ccc;
+            padding: 2px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-box-shadow: 1px 1px 1px gray;
+            -webkit-box-shadow: 1px 1px 2px gray;
+         }
+         .kw {
+            color: blue;
+         }
+         .skw {
+            color: rgb(63, 127, 127);
+         }
+
+         .str {
+            color: rgb(128, 0, 0);
+         }
+
+         .dig {
+            color: rgb(128, 64, 0);
+         }
+
+         .cmt {
+            color: rgb(200, 0, 200);
+         }
+
+         h2 {
+            display: inline;
+            font-weight: normal;
+         }
+
+         .info {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            display: none;
+         }
+
+         a {
+            color: #9D2900;
+         }
+
+         body {
+            font-family: "Trebuchet MS", Arial, Sans-Serif;
+         }
+
+      </style>
+   </head>
+<body>
+<div class="info">
+<h2>Food_R71.sikuli</h2> <a href="Food_R71.zip">(Download this script)</a>
+</div>
+<pre class="sikuli-code">
+<span class="cmt">#Initialize</span>
+set = <span class="dig">1</span>
+<span class="cmt">#######################################################################</span>
+<span class="kw">def</span> trade(set):
+    hover(<img src="1548956531799.png" />)
+    <span class="skw">wait</span>(<span class="dig">1</span>)
+    <span class="skw">click</span>(Location(<span class="dig">1713</span>, <span class="dig">263</span>)) <span class="cmt"># Middle Character</span>
+    <span class="skw">wait</span>(<span class="dig">0.3</span>)
+    <span class="skw">click</span>(<img src="1548999253261.png" />) <span class="cmt">#click trade icon</span>
+    <span class="skw">wait</span>(<img src="1548999302748.png" />,<span class="dig">100</span>)
+    <span class="skw">click</span>(<img src="1548999302748.png" />)
+    <span class="skw">wait</span>(<span class="dig">0.3</span>)
+    <span class="kw">if</span> exists(<img src="1548999358195.png" />):
+        tmp = <span class="dig">0</span>
+        <span class="kw">for</span> checkBox <span class="kw">in</span> findAll(<img src="1548999358195.png" />):
+            <span class="skw">doubleClick</span>(checkBox)
+            tmp = tmp + <span class="dig">1</span>
+            <span class="kw">if</span> (tmp == set):
+                <span class="kw">break</span>
+            <span class="skw">wait</span>(<span class="dig">0.1</span>)
+    <span class="kw">if</span> exists(<img src="1548999692602.png" />):
+        tmp = <span class="dig">0</span>
+        <span class="kw">for</span> checkBox <span class="kw">in</span> findAll(<img src="1548999692602.png" />):
+            <span class="skw">doubleClick</span>(checkBox)
+            tmp = tmp + <span class="dig">1</span>
+            <span class="kw">if</span> (tmp == set):
+                <span class="kw">break</span>
+            <span class="skw">wait</span>(<span class="dig">0.1</span>)
+    <span class="kw">if</span> exists(<img src="1548999722051.png" />):
+        tmp = <span class="dig">0</span>
+        <span class="kw">for</span> checkBox <span class="kw">in</span> findAll(<img src="1548999722051.png" />):
+            <span class="skw">doubleClick</span>(checkBox)
+            tmp = tmp + <span class="dig">1</span>
+            <span class="kw">if</span> (tmp == set):
+                <span class="kw">break</span>
+            <span class="skw">wait</span>(<span class="dig">0.1</span>)
+    <span class="kw">if</span> exists(<img src="1548999749092.png" />):
+        tmp = <span class="dig">0</span>
+        <span class="kw">for</span> checkBox <span class="kw">in</span> findAll(<img src="1548999749092.png" />):
+            <span class="skw">doubleClick</span>(checkBox)
+            tmp = tmp + <span class="dig">1</span>
+            <span class="kw">if</span> (tmp == set):
+                <span class="kw">break</span>
+            <span class="skw">wait</span>(<span class="dig">0.1</span>)
+    <span class="skw">click</span>(<img src="1549000339846.png" />)
+    <span class="skw">wait</span>(<span class="dig">0.1</span>)
+    <span class="kw">for</span> i <span class="kw">in</span> range(<span class="dig">2</span>):
+        hover(<img src="1548956531799.png" />)
+        <span class="skw">wait</span>(<span class="dig">1</span>)
+        <span class="skw">click</span>(Location(<span class="dig">1709</span>, <span class="dig">109</span>)) <span class="cmt"># First character</span>
+        <span class="kw">if</span> (i==<span class="dig">0</span>):
+            <span class="skw">click</span>(<img src="1549000339846.png" />)
+            <span class="skw">wait</span>(<span class="dig">0.1</span>)
+            hover(<img src="1548956531799.png" />)
+            <span class="skw">wait</span>(<span class="dig">1</span>)
+            <span class="skw">click</span>(Location(<span class="dig">1713</span>, <span class="dig">263</span>)) <span class="cmt"># Middle Character</span>
+            <span class="skw">wait</span>(<span class="dig">0.1</span>)
+            <span class="skw">click</span>(<img src="1549000700402.png" />)
+            <span class="skw">wait</span>(<span class="dig">0.1</span>)
+        <span class="kw">if</span> (i==<span class="dig">1</span>):
+            <span class="skw">wait</span>(<img src="1549000700402.png" />,<span class="dig">15</span>)
+            <span class="skw">click</span>(<img src="1549000927248.png" />)
+    <span class="cmt"># Trade to Last character ########################!!</span>
+    hover(<img src="1548956531799.png" />)
+    <span class="skw">wait</span>(<span class="dig">1</span>)
+    <span class="skw">click</span>(Location(<span class="dig">1708</span>, <span class="dig">417</span>)) <span class="cmt"># Last Character</span>
+    <span class="skw">wait</span>(<span class="dig">0.3</span>)
+    <span class="skw">click</span>(<img src="1548999253261.png" />) <span class="cmt">#click trade icon</span>
+    <span class="skw">wait</span>(<img src="1548999302748.png" />,<span class="dig">100</span>)
+    <span class="skw">click</span>(<img src="1548999302748.png" />)
+    <span class="skw">wait</span>(<span class="dig">1.0</span>)
+    <span class="kw">if</span> exists(<img src="1548999358195.png" />,):
+        tmp = <span class="dig">0</span>
+        <span class="kw">for</span> checkBox <span class="kw">in</span> findAll(<img src="1548999358195.png" />):
+            <span class="skw">doubleClick</span>(checkBox)
+            tmp = tmp + <span class="dig">1</span>
+            <span class="kw">if</span> (tmp == set):
+                <span class="kw">break</span>
+            <span class="skw">wait</span>(<span class="dig">0.1</span>)
+    <span class="kw">if</span> exists(<img src="1548999692602.png" />,<span class="dig">1</span>):
+        tmp = <span class="dig">0</span>
+        <span class="kw">for</span> checkBox <span class="kw">in</span> findAll(<img src="1548999692602.png" />):
+            <span class="skw">doubleClick</span>(checkBox)
+            tmp = tmp + <span class="dig">1</span>
+            <span class="kw">if</span> (tmp == set):
+                <span class="kw">break</span>
+            <span class="skw">wait</span>(<span class="dig">0.1</span>)
+    <span class="kw">if</span> exists(<img src="1548999722051.png" />,<span class="dig">1</span>):
+        tmp = <span class="dig">0</span>
+        <span class="kw">for</span> checkBox <span class="kw">in</span> findAll(<img src="1548999722051.png" />):
+            <span class="skw">doubleClick</span>(checkBox)
+            tmp = tmp + <span class="dig">1</span>
+            <span class="kw">if</span> (tmp == set):
+                <span class="kw">break</span>
+            <span class="skw">wait</span>(<span class="dig">0.1</span>)
+    <span class="kw">if</span> exists(<img src="1548999749092.png" />,<span class="dig">1</span>):
+        tmp = <span class="dig">0</span>
+        <span class="kw">for</span> checkBox <span class="kw">in</span> findAll(<img src="1548999749092.png" />):
+            <span class="skw">doubleClick</span>(checkBox)
+            tmp = tmp + <span class="dig">1</span>
+            <span class="kw">if</span> (tmp == set):
+                <span class="kw">break</span>
+            <span class="skw">wait</span>(<span class="dig">0.1</span>)
+    <span class="skw">click</span>(<img src="1549000339846.png" />)
+    <span class="skw">wait</span>(<span class="dig">0.1</span>)
+    <span class="kw">for</span> i <span class="kw">in</span> range(<span class="dig">2</span>):
+        hover(<img src="1548956531799.png" />)
+        <span class="skw">wait</span>(<span class="dig">1</span>)
+        <span class="skw">click</span>(Location(<span class="dig">1709</span>, <span class="dig">109</span>)) <span class="cmt"># First character</span>
+        <span class="skw">wait</span>(<span class="dig">0.1</span>)
+        <span class="kw">if</span> (i==<span class="dig">0</span>):
+            <span class="skw">wait</span>(Pattern(<img src="1549000339846.png" />).similar(<span class="dig">0.50</span>),<span class="dig">10</span>)
+            <span class="skw">click</span>(Pattern(<img src="1549000339846.png" />).similar(<span class="dig">0.50</span>))
+            <span class="skw">wait</span>(<span class="dig">0.1</span>)
+            hover(<img src="1548956531799.png" />)
+            <span class="skw">wait</span>(<span class="dig">1</span>)
+            <span class="skw">click</span>(Location(<span class="dig">1708</span>, <span class="dig">417</span>)) <span class="cmt"># Last Character</span>
+            <span class="skw">wait</span>(<span class="dig">0.1</span>)
+            <span class="skw">click</span>(<img src="1549000700402.png" />)
+            <span class="skw">wait</span>(<span class="dig">0.1</span>)
+        <span class="kw">if</span> (i==<span class="dig">1</span>):
+            <span class="skw">wait</span>(<img src="1549000700402.png" />,<span class="dig">15</span>)
+            <span class="skw">click</span>(<img src="1549000927248.png" />)
+            <span class="skw">wait</span>(<span class="dig">0.1</span>)
+            <span class="skw">click</span>(Pattern(<img src="1548941574755.png" />).similar(<span class="dig">0.75</span>))
+            <span class="skw">wait</span>(<span class="dig">0.3</span>)
+<span class="cmt">#######################################################################      </span>
+<span class="kw">def</span> cook(clock):
+    <span class="skw">wait</span>(<img src="1548937550686.png" />,<span class="dig">10</span>)
+    <span class="skw">doubleClick</span>(<img src="1548937550686.png" />) <span class="cmt">#</span>
+    <span class="skw">wait</span>(<span class="dig">0.1</span>)
+
+    <span class="skw">wait</span>(<img src="1548937591797.png" />,<span class="dig">10</span>)
+    <span class="skw">doubleClick</span>(<img src="1548937591797.png" />)
+    <span class="skw">wait</span>(<span class="dig">0.1</span>)
+    <span class="skw">wait</span>(<img src="1548937601131.png" />,<span class="dig">10</span>)
+    <span class="skw">doubleClick</span>(<img src="1548937601131.png" />)
+    <span class="skw">wait</span>(<span class="dig">0.1</span>)
+
+    <span class="skw">wait</span>(<img src="1548937609247.png" />,<span class="dig">10</span>)
+    <span class="skw">doubleClick</span>(<img src="1548937609247.png" />)
+    <span class="skw">wait</span>(<span class="dig">0.1</span>)
+
+    <span class="skw">wait</span>(<img src="1548937616371.png" />,<span class="dig">10</span>)
+    <span class="skw">doubleClick</span>(<img src="1548937616371.png" />)
+    <span class="skw">wait</span>(<span class="dig">0.1</span>)
+    <span class="skw">click</span>(<img src="1548937647215.png" />)
+    <span class="skw">wait</span>(<img src="1548937716443.png" />,<span class="dig">100</span>)
+    <span class="skw">click</span>(<img src="1548937716443.png" />)
+    <span class="skw">type</span>(Key.UP + Key.ENTER)
+    clock = clock +<span class="dig">1</span>
+    <span class="kw">return</span>(clock)
+<span class="cmt">#######################################################################    </span>
+<span class="kw">def</span> init():
+   clock = <span class="dig">0</span>
+   <span class="kw">return</span>(clock)
+<span class="cmt">#######################################################################</span>
+<span class="kw">def</span> ini_itter():
+    itter = <span class="dig">0</span>
+    <span class="kw">return</span>(itter)
+
+<span class="cmt">#######################################################################   </span>
+<span class="kw">def</span> recover():
+    <span class="skw">wait</span>(<img src="1548938910092.png" />,<span class="dig">20</span>)
+    <span class="skw">click</span>(<img src="1548938910092.png" />)
+    <span class="skw">rightClick</span>(<img src="1549039719897.png" />)
+    <span class="kw">if</span> <span class="skw">find</span>(<img src="1548939702668.png" />):
+        <span class="skw">click</span>(<img src="1548939982892.png" />)
+        <span class="skw">wait</span>(Pattern(<img src="1548940015159.png" />).similar(<span class="dig">0.80</span>),<span class="dig">10</span>)
+        <span class="skw">click</span>(Pattern(<img src="1548940015159.png" />).similar(<span class="dig">0.80</span>))
+        <span class="skw">wait</span>(<img src="1548940051619.png" />,<span class="dig">10</span>)
+        <span class="skw">click</span>(<img src="1548940051619.png" />)
+        <span class="skw">wait</span>(<img src="1548940185945.png" />,<span class="dig">10</span>)
+        <span class="skw">click</span>(<img src="1548940196970.png" />)
+        clock = init()
+        <span class="skw">click</span>(Pattern(<img src="1548941574755.png" />).similar(<span class="dig">0.75</span>))
+        <span class="skw">wait</span>(<span class="dig">0.3</span>)
+<span class="cmt">#######################################################################</span>
+
+<span class="cmt"># Main()</span>
+clock = init()
+itter = ini_itter()
+<span class="kw">while</span>(<span class="dig">1</span>):
+    <span class="kw">if</span> (clock == <span class="dig">4</span>):
+        recover()
+        itter = itter + <span class="dig">1</span>
+        clock = <span class="dig">0</span>
+    <span class="kw">if</span> (itter == <span class="dig">1</span>):
+        trade(set)
+        itter = <span class="dig">0</span>
+        <span class="skw">wait</span>(<span class="dig">0.2</span>)
+    clock = cook(clock)
+    <span class="skw">wait</span>(<span class="dig">0.5</span>)
+</pre>
+</body>
+</html>

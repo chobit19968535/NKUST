@@ -1,0 +1,226 @@
+
+<html>
+   <head>
+      <style type="text/css">
+         .sikuli-code {
+            font-size: 20px;
+            font-family: "Osaka-mono", Monospace;
+            line-height: 1.5em;
+            display:table-cell;
+            white-space: pre-wrap;       /* css-3 */
+            white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+            white-space: -pre-wrap;      /* Opera 4-6 */
+            white-space: -o-pre-wrap;    /* Opera 7 */
+            word-wrap: break-word;       /* Internet Explorer 5.5+ */
+            width: 99%;   /* remove horizontal scroll-bar when viewing in IE7 */
+         }
+         .sikuli-code img {
+            vertical-align: middle;
+            margin: 2px;
+            border: 1px solid #ccc;
+            padding: 2px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-box-shadow: 1px 1px 1px gray;
+            -webkit-box-shadow: 1px 1px 2px gray;
+         }
+         .kw {
+            color: blue;
+         }
+         .skw {
+            color: rgb(63, 127, 127);
+         }
+
+         .str {
+            color: rgb(128, 0, 0);
+         }
+
+         .dig {
+            color: rgb(128, 64, 0);
+         }
+
+         .cmt {
+            color: rgb(200, 0, 200);
+         }
+
+         h2 {
+            display: inline;
+            font-weight: normal;
+         }
+
+         .info {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            display: none;
+         }
+
+         a {
+            color: #9D2900;
+         }
+
+         body {
+            font-family: "Trebuchet MS", Arial, Sans-Serif;
+         }
+
+      </style>
+   </head>
+<body>
+<div class="info">
+<h2>get_material.sikuli</h2> <a href="get_material.zip">(Download this script)</a>
+</div>
+<pre class="sikuli-code">
+<span class="kw">from</span> sikuli <span class="kw">import</span> *
+<span class="kw">def</span> open_box(mat, rank):
+<span class="cmt">#####################################################################################</span>
+    <span class="kw">if</span> rank == <span class="dig">21</span>:
+        boxes = findAll(<img src="1578238799075.png" />)
+        <span class="kw">if</span> mat == <img src="h1_4.png" />:
+            count = <span class="dig">0</span>
+            <span class="kw">for</span> i <span class="kw">in</span> boxes:
+                hover(i)
+                <span class="kw">if</span> exists(<img src="1578675333208.png" />,<span class="dig">1</span>):
+                    <span class="skw">doubleClick</span>(i)
+                    <span class="kw">break</span>
+                <span class="kw">else</span>:
+                    count += <span class="dig">1</span>
+                    <span class="kw">print</span>(<span class="str">"Not found"</span>, mat, count)
+
+            <span class="kw">return</span>()
+        <span class="kw">elif</span> mat == <img src="h2_2.png" />:
+            count = <span class="dig">0</span>
+            <span class="kw">for</span> i <span class="kw">in</span> boxes:
+                hover(i)
+                <span class="kw">if</span> exists(<img src="1578675354944.png" />,<span class="dig">1</span>):
+                    <span class="skw">doubleClick</span>(i)
+                    <span class="kw">break</span>
+                <span class="kw">else</span>:
+                    count += <span class="dig">1</span>
+                    <span class="kw">print</span>(<span class="str">"Not found"</span>, mat, count)
+            <span class="kw">return</span>()
+        <span class="kw">elif</span> mat == <img src="h3_1.png" />:
+            count = <span class="dig">0</span>
+            <span class="kw">for</span> i <span class="kw">in</span> boxes:
+                hover(i)
+                <span class="kw">if</span> exists(<img src="1578239688504.png" />,<span class="dig">1</span>):
+                    <span class="skw">doubleClick</span>(i)
+                    <span class="kw">break</span>
+                <span class="kw">else</span>:
+                    count += <span class="dig">1</span>
+                    <span class="kw">print</span>(<span class="str">"Not found"</span>, mat, count)
+<span class="cmt">######################################################################################</span>
+    <span class="kw">if</span> rank == <span class="dig">61</span>:
+        boxes = findAll(<img src="1578238799075.png" />)
+        <span class="kw">if</span> mat == <img src="h2_1.png" />:
+            count = <span class="dig">0</span>
+            <span class="kw">for</span> i <span class="kw">in</span> boxes:
+                hover(i)
+                <span class="kw">if</span> exists(Pattern(<img src="1578239522514.png" />).similar(<span class="dig">0.50</span>),<span class="dig">1</span>):
+                    <span class="skw">doubleClick</span>(i)
+                    <span class="kw">break</span>
+                <span class="kw">else</span>:
+                    count += <span class="dig">1</span>
+                    <span class="kw">print</span>(<span class="str">"Not found"</span>, mat, count)
+
+            <span class="kw">return</span>()
+        <span class="kw">elif</span> mat == <img src="h3_1.png" />:
+            count = <span class="dig">0</span>
+            <span class="kw">for</span> i <span class="kw">in</span> boxes:
+                hover(i)
+                <span class="kw">if</span> exists(Pattern(<img src="1578239688504.png" />).similar(<span class="dig">0.50</span>),<span class="dig">1</span>):
+                    <span class="skw">doubleClick</span>(i)
+                    <span class="kw">break</span>
+                <span class="kw">else</span>:
+                    count += <span class="dig">1</span>
+                    <span class="kw">print</span>(<span class="str">"Not found"</span>, mat, count)
+            <span class="kw">return</span>()
+        <span class="kw">elif</span> mat == <img src="h3_2.png" />:
+            count = <span class="dig">0</span>
+            <span class="kw">for</span> i <span class="kw">in</span> boxes:
+                hover(i)
+                <span class="kw">if</span> exists(Pattern(<img src="1578239742771.png" />).similar(<span class="dig">0.50</span>),<span class="dig">1</span>):
+                    <span class="skw">doubleClick</span>(i)
+                    <span class="kw">break</span>
+                <span class="kw">else</span>:
+                    count += <span class="dig">1</span>
+                    <span class="kw">print</span>(<span class="str">"Not found"</span>, mat, count)
+        <span class="kw">elif</span> mat == <img src="h5_1.png" />:
+            count = <span class="dig">0</span>
+            <span class="kw">for</span> i <span class="kw">in</span> boxes:
+                hover(i)
+                <span class="kw">if</span> exists(Pattern(<img src="1578239774858.png" />).similar(<span class="dig">0.50</span>),<span class="dig">1</span>):
+                    <span class="skw">doubleClick</span>(i)
+                    <span class="kw">break</span>
+                <span class="kw">else</span>:
+                    count += <span class="dig">1</span>
+                    <span class="kw">print</span>(<span class="str">"Not found"</span>, mat, count)
+        <span class="kw">elif</span> mat == <img src="h6_1.png" />:
+            count = <span class="dig">0</span>
+            <span class="kw">for</span> i <span class="kw">in</span> boxes:
+                hover(i)
+                <span class="kw">if</span> exists(Pattern(<img src="1578239824046.png" />).similar(<span class="dig">0.50</span>),<span class="dig">1</span>):
+                    <span class="skw">doubleClick</span>(i)
+                    <span class="kw">break</span>
+                <span class="kw">else</span>:
+                    count += <span class="dig">1</span>
+                    <span class="kw">print</span>(<span class="str">"Not found"</span>, mat, count)
+<span class="cmt">######################################################################################</span>
+    <span class="kw">if</span> rank == <span class="dig">71</span>:
+        boxes = findAll(<img src="1578238799075.png" />)
+        <span class="kw">if</span> mat == <img src="h6_2.png" />:
+            count = <span class="dig">0</span>
+            <span class="kw">for</span> i <span class="kw">in</span> boxes:
+                hover(i)
+                <span class="kw">if</span> exists(<img src="1578542392435.png" />,<span class="dig">1</span>):
+                    <span class="skw">doubleClick</span>(i)
+                    <span class="kw">break</span>
+                <span class="kw">else</span>:
+                    count += <span class="dig">1</span>
+                    <span class="kw">print</span>(<span class="str">"Not found"</span>, mat, count)
+
+            <span class="kw">return</span>()
+        <span class="kw">elif</span> mat == <img src="h2_1.png" />:
+            count = <span class="dig">0</span>
+            <span class="kw">for</span> i <span class="kw">in</span> boxes:
+                hover(i)
+                <span class="kw">if</span> exists(<img src="1578542422138.png" />,<span class="dig">1</span>):
+                    <span class="skw">doubleClick</span>(i)
+                    <span class="kw">break</span>
+                <span class="kw">else</span>:
+                    count += <span class="dig">1</span>
+                    <span class="kw">print</span>(<span class="str">"Not found"</span>, mat, count)
+            <span class="kw">return</span>()
+        <span class="kw">elif</span> mat == <img src="h5_5.png" />:
+            count = <span class="dig">0</span>
+            <span class="kw">for</span> i <span class="kw">in</span> boxes:
+                hover(i)
+                <span class="kw">if</span> exists(<img src="1578542460520.png" />,<span class="dig">1</span>):
+                    <span class="skw">doubleClick</span>(i)
+                    <span class="kw">break</span>
+                <span class="kw">else</span>:
+                    count += <span class="dig">1</span>
+                    <span class="kw">print</span>(<span class="str">"Not found"</span>, mat, count)
+        <span class="kw">elif</span> mat == <img src="h4_4.png" />:
+            count = <span class="dig">0</span>
+            <span class="kw">for</span> i <span class="kw">in</span> boxes:
+                hover(i)
+                <span class="kw">if</span> exists(<img src="1578542482103.png" />,<span class="dig">1</span>):
+                    <span class="skw">doubleClick</span>(i)
+                    <span class="kw">break</span>
+                <span class="kw">else</span>:
+                    count += <span class="dig">1</span>
+                    <span class="kw">print</span>(<span class="str">"Not found"</span>, mat, count)
+        <span class="kw">elif</span> mat == <img src="h7_3.png" />:
+            count = <span class="dig">0</span>
+            <span class="kw">for</span> i <span class="kw">in</span> boxes:
+                hover(i)
+                <span class="kw">if</span> exists(<img src="1578542495348.png" />,<span class="dig">1</span>):
+                    <span class="skw">doubleClick</span>(i)
+                    <span class="kw">break</span>
+                <span class="kw">else</span>:
+                    count += <span class="dig">1</span>
+                    <span class="kw">print</span>(<span class="str">"Not found"</span>, mat, count)
+    <span class="kw">return</span>()
+</pre>
+</body>
+</html>

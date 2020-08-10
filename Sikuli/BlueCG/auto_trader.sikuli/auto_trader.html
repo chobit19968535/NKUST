@@ -1,0 +1,172 @@
+
+<html>
+   <head>
+      <style type="text/css">
+         .sikuli-code {
+            font-size: 20px;
+            font-family: "Osaka-mono", Monospace;
+            line-height: 1.5em;
+            display:table-cell;
+            white-space: pre-wrap;       /* css-3 */
+            white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+            white-space: -pre-wrap;      /* Opera 4-6 */
+            white-space: -o-pre-wrap;    /* Opera 7 */
+            word-wrap: break-word;       /* Internet Explorer 5.5+ */
+            width: 99%;   /* remove horizontal scroll-bar when viewing in IE7 */
+         }
+         .sikuli-code img {
+            vertical-align: middle;
+            margin: 2px;
+            border: 1px solid #ccc;
+            padding: 2px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-box-shadow: 1px 1px 1px gray;
+            -webkit-box-shadow: 1px 1px 2px gray;
+         }
+         .kw {
+            color: blue;
+         }
+         .skw {
+            color: rgb(63, 127, 127);
+         }
+
+         .str {
+            color: rgb(128, 0, 0);
+         }
+
+         .dig {
+            color: rgb(128, 64, 0);
+         }
+
+         .cmt {
+            color: rgb(200, 0, 200);
+         }
+
+         h2 {
+            display: inline;
+            font-weight: normal;
+         }
+
+         .info {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            display: none;
+         }
+
+         a {
+            color: #9D2900;
+         }
+
+         body {
+            font-family: "Trebuchet MS", Arial, Sans-Serif;
+         }
+
+      </style>
+   </head>
+<body>
+<div class="info">
+<h2>auto_trader.sikuli</h2> <a href="auto_trader.zip">(Download this script)</a>
+</div>
+<pre class="sikuli-code">
+<span class="kw">from</span> sikuli <span class="kw">import</span> *
+<span class="kw">def</span> trade(X, chest_flag):
+    mat_locate = Location(<span class="dig">228</span>, <span class="dig">278</span>)
+    maker_locate = Location(<span class="dig">229</span>, <span class="dig">100</span>)
+    page1 = <img src="page1.png" />
+    page2 = <img src="page2.png" />
+    pages = [page1, page2]
+
+    mat_box = <img src="1579049773957.png" />
+    trade_icon1 = <img src="trade_icon1.png" />
+    trade_icon2 = <img src="trade_icon2.png" />
+    <span class="skw">click</span>(<img src="1578775575481.png" />)
+    <span class="skw">wait</span>(<span class="dig">0.25</span>)
+    <span class="skw">click</span>(<img src="1578775585587.png" />)
+    <span class="skw">wait</span>(<span class="dig">0.25</span>)
+    <span class="skw">click</span>(trade_icon1)
+    game = <img src="game.png" />
+    hover(game)
+    <span class="skw">wait</span>(<span class="dig">2</span>)
+    <span class="skw">click</span>(mat_locate) <span class="cmt"># windows of mat_container</span>
+    <span class="kw">while</span>(len(X) != <span class="dig">0</span> ):
+        goal = X[<span class="dig">0</span>]
+        <span class="kw">if</span> goal == <img src="1578239824046.png" />:
+            mat_box = <img src="sugar_img.png" />
+        <span class="kw">try</span>:
+            results = findAll(mat_box)
+        <span class="kw">except</span>:
+            <span class="cmt"># Close all windows</span>
+            running = <span class="dig">1</span>
+            <span class="kw">while</span> ( running ):
+                <span class="kw">if</span> exists(<img src="icon_-.png" />):
+                    <span class="skw">click</span>(<img src="icon_-.png" />)
+                <span class="kw">else</span>:
+                    running = <span class="dig">0</span>
+            <span class="cmt"># Open backpack</span>
+            <span class="kw">print</span>(<span class="str">"Open Backpacks"</span>)
+            <span class="skw">wait</span>(<span class="dig">0.25</span>)
+            keyDown(Key.CTRL)
+            keyDown(<span class="str">"e"</span>)
+            <span class="skw">wait</span>(<span class="dig">1.0</span>)
+            keyUp(Key.CTRL)
+            keyUp(<span class="str">"e"</span>)
+            <span class="cmt"># Open Chest</span>
+            <span class="skw">doubleClick</span>(<img src="chest_icon.png" />)
+            <span class="skw">wait</span>(<span class="dig">0.5</span>)
+            <span class="cmt"># Get mat_box from Chest</span>
+            flag = <span class="dig">0</span>
+            <span class="kw">for</span> p <span class="kw">in</span> pages:
+                <span class="skw">click</span>(p)
+                <span class="skw">wait</span>(<span class="dig">2</span>)
+                <span class="kw">if</span> exists (mat_box):
+                    candicates = findAll(mat_box)
+                    <span class="kw">for</span> c <span class="kw">in</span> candicates:
+                        hover(c)
+                        <span class="skw">wait</span>(<span class="dig">0.25</span>)
+                        <span class="kw">if</span> exists(goal, <span class="dig">0.5</span>):
+                            <span class="skw">doubleClick</span>(c)
+                            <span class="kw">print</span>(<span class="str">"x_sort:"</span>, X)
+                            <span class="kw">print</span>(<span class="str">"success"</span>, goal)
+                            <span class="skw">click</span>(<img src="chest_ok.png" />)
+                            flag = <span class="dig">1</span>
+                            <span class="kw">break</span>
+                    <span class="kw">if</span> flag == <span class="dig">1</span>:
+                        <span class="kw">break</span>
+                <span class="kw">else</span>:
+                    <span class="kw">continue</span>
+            hover(game)
+            <span class="skw">wait</span>(<span class="dig">2</span>)
+            <span class="skw">click</span>(maker_locate) <span class="cmt"># windows of Producter</span>
+            <span class="skw">click</span>(<img src="1578775575481.png" />)
+            <span class="skw">wait</span>(<span class="dig">0.25</span>)
+            <span class="skw">click</span>(<img src="1578775585587.png" />)
+            <span class="skw">wait</span>(<span class="dig">0.25</span>)
+            <span class="skw">click</span>(trade_icon1)
+            hover(game)
+            <span class="skw">wait</span>(<span class="dig">2</span>)
+            <span class="skw">click</span>(mat_locate) <span class="cmt"># windows of mat_container</span>
+            <span class="kw">continue</span>
+        <span class="kw">for</span> j <span class="kw">in</span> results:
+            hover(j)
+            <span class="kw">if</span> exists(goal, <span class="dig">0.5</span>):
+                <span class="skw">doubleClick</span>(j)
+                <span class="kw">del</span> X[<span class="dig">0</span>]
+                <span class="skw">wait</span>(<span class="dig">1</span>)
+                <span class="kw">break</span>
+    <span class="skw">wait</span>(<span class="dig">0.3</span>)
+    <span class="skw">click</span>(trade_icon1)
+    <span class="skw">wait</span>(<span class="dig">0.3</span>)
+    <span class="skw">click</span>(trade_icon2)
+    hover(game)
+    <span class="skw">wait</span>(<span class="dig">2</span>)
+    <span class="skw">click</span>(maker_locate) <span class="cmt"># windows of Producter</span>
+    <span class="skw">wait</span>(<span class="dig">0.3</span>)
+    <span class="skw">click</span>(trade_icon2)
+    hover(<img src="1594962436409.png" />)
+    <span class="skw">type</span>(<span class="str">"/re"</span> + Key.ENTER)
+    <span class="kw">return</span>()
+</pre>
+</body>
+</html>
