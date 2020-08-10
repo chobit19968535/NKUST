@@ -1,0 +1,10 @@
+python==3.6
+_________________________________________________
+conda install tensorflow==1.13.1
+conda install tensorflow-gpu==1.13.1  #¥i¿ï
+conda install keras==2.2.4
+conda install spyder
+conda install matplotlib==3.0.2
+conda install pandas==0.24.2
+conda install pillow==6.0.0
+pip install opencv-python==4.1.0.25
