@@ -1,1 +1,1 @@
-# ^w^
+CRNN + STN for OCR 
